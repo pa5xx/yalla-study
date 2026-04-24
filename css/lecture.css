@@ -1,0 +1,314 @@
+/* ============================================================
+   lecture.css  —  ستايل صفحة المحاضرة (ملخص / قاموس / MCQ)
+   ============================================================ */
+
+/* ── Lecture Header ── */
+.lecture-header {
+  margin: 24px 0 0;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.lecture-header h2 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+}
+
+.lecture-header-en {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  direction: ltr;
+  text-align: left;
+}
+
+/* ══════════════════════════════════════════
+   SUMMARY TAB
+══════════════════════════════════════════ */
+.summary-label {
+  font-size: 0.82rem;
+  color: var(--blue);
+  font-weight: 700;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.summary-text {
+  line-height: 2.2;
+  color: rgba(255,255,255,0.82);
+  font-size: 1rem;
+}
+
+/* ══════════════════════════════════════════
+   GLOSSARY TAB
+══════════════════════════════════════════ */
+.glossary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.glossary-hint {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.glossary-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 16px 16px 48px;   /* space for speak btn on left */
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.glossary-card:hover {
+  border-color: rgba(167,139,250,0.45);
+  background: rgba(167,139,250,0.06);
+}
+
+.g-en {
+  font-family: var(--font-mono);
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: #fff;
+  direction: ltr;
+}
+
+.g-ar {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple);
+  margin: 4px 0 2px;
+}
+
+.g-pron {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  direction: ltr;
+}
+
+/* Speak button */
+.btn-speak {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.07);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-speak:hover { background: rgba(255,255,255,0.15); transform: translateY(-50%) scale(1.1); }
+
+.btn-speak.speaking {
+  background: rgba(126,184,247,0.18);
+  animation: speakPulse 0.55s infinite alternate;
+}
+
+@keyframes speakPulse {
+  from { transform: translateY(-50%) scale(1); }
+  to   { transform: translateY(-50%) scale(1.18); }
+}
+
+@media (max-width: 480px) {
+  .glossary-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════════
+   MCQ TAB
+══════════════════════════════════════════ */
+
+/* Score Banner */
+.score-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  animation: fadeUp 0.3s ease;
+}
+
+.score-banner.pass {
+  background: rgba(52,211,153,0.08);
+  border: 1px solid rgba(52,211,153,0.28);
+}
+
+.score-banner.fail {
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.28);
+}
+
+.score-emoji { font-size: 2.2rem; }
+
+.score-info { flex: 1; }
+
+.score-fraction {
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.score-pct {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.score-msg {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* MCQ Questions */
+.mcq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mcq-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.mcq-question {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.mcq-num {
+  background: rgba(126,184,247,0.13);
+  color: var(--blue);
+  border-radius: 8px;
+  padding: 2px 10px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mcq-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mcq-opt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-family: var(--font-ar);
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.78);
+  text-align: right;
+  width: 100%;
+  transition: all 0.15s;
+}
+
+.mcq-opt:hover:not(:disabled) {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.mcq-opt.selected { border-color: var(--blue); background: rgba(126,184,247,0.09); color: var(--blue); }
+.mcq-opt.correct  { border-color: var(--green); background: rgba(52,211,153,0.09); color: var(--green); }
+.mcq-opt.wrong    { border-color: var(--red);   background: rgba(248,113,113,0.09); color: var(--red); }
+
+.mcq-opt:disabled { cursor: default; }
+
+.opt-letter {
+  background: rgba(255,255,255,0.07);
+  border-radius: 6px;
+  padding: 1px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.btn-submit,
+.btn-reset {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-ar);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  color: #0b0f1a;
+}
+
+.btn-submit:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-submit:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(126,184,247,0.3);
+}
+
+.btn-reset {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: rgba(255,255,255,0.65);
+}
+
+.btn-reset:hover {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+}
+.code-block {
+  background: #1e1e1e;
+  color: #dcdcdc;
+  padding: 15px;
+  border-radius: 8px;
+  direction: ltr; /* الكود دائماً يسار ليمين */
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border: 1px solid rgba(255,255,255,0.1);
+}

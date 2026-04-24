@@ -1,0 +1,101 @@
+/* ============================================================
+   subject.css  —  ستايل صفحة المادة (قائمة المحاضرات)
+   ============================================================ */
+
+.subject-hero {
+  margin: 24px 0 20px;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  border-top: 3px solid var(--c, var(--blue));
+  text-align: center;
+}
+
+.subject-hero-icon { font-size: 3rem; }
+
+.subject-hero h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 10px 0 4px;
+}
+
+.subject-hero-en {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  direction: ltr;
+}
+
+/* ── Lectures List ── */
+.lectures-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lecture-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.22s;
+}
+
+.lecture-item:hover {
+  border-color: var(--c, var(--blue));
+  background: rgba(255,255,255,0.07);
+  transform: translateX(-4px);
+}
+
+.lec-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+.lec-info { flex: 1; min-width: 0; }
+
+.lec-title-ar {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.lec-title-en {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--muted);
+  direction: ltr;
+  text-align: left;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lec-badges {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.badge {
+  background: rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.lec-arrow {
+  color: var(--c, var(--blue));
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .lec-badges { display: none; }
+}

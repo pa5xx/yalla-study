@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المادة — Yalla-Study</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/subject.css" />
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header class="site-header">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">🎓</span>
+      <span class="logo-text">Yalla-Study</span>
+    </a>
+    <span class="header-sub">منصتك التعليمية</span>
+  </header>
+
+  <!-- ── BACK ── -->
+  <a class="btn-back" href="index.html">← الرئيسية</a>
+
+  <!-- ── MAIN ── -->
+  <main class="page">
+
+    <!-- بطاقة المادة -->
+    <div class="subject-hero">
+      <div id="subject-icon" class="subject-hero-icon"></div>
+      <h2 id="subject-name"></h2>
+      <p id="subject-en" class="subject-hero-en ltr"></p>
+    </div>
+
+    <!-- قائمة المحاضرات — تُملأ بـ subject.js -->
+    <div class="lectures-list" id="lectures-list"></div>
+
+  </main>
+
+  <!-- ── SCRIPTS ── -->
+  <script src="js/data.js"></script>
+  <script src="js/subject.js"></script>
+</body>
+</html>
