@@ -81,3 +81,5 @@ yalla-study/
 | [Prism.js](https://prismjs.com/) | تلوين الأكواد البرمجية |
 | Web Speech API | النطق الصوتي للمصطلحات |
 | Google Fonts (Tajawal + DM Mono) | الخطوط |
+
+https://pa5xx.github.io/yalla-study/
