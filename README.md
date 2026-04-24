@@ -31,15 +31,6 @@ yalla-study/
     └── lecture.js
 ```
 
-## 🚀 التشغيل
-
-افتح المجلد في XAMPP داخل `htdocs/` ثم افتح المتصفح على:
-
-```
-http://localhost/yalla-study/
-```
-
-أو افتح `index.html` مباشرة في المتصفح (بعض ميزات الصوت تحتاج localhost).
 
 ## ➕ إضافة مادة جديدة
 
